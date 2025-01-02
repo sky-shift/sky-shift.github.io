@@ -1,0 +1,2620 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CLI Documentation &#8212; SkyShift</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=28af074a"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/cli_docs';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quickstart" href="../quickstart/quickstart.html" />
+    <link rel="prev" title="Launching SkyShift" href="setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SkyShift</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/networking.html">Networking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Launching SkyShift</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">CLI Documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Registration and Login</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../authentication/authentication.html">Authentication in SkyShift</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Slurm Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../slurm_support/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm_support/quickstart/slurm_quickstart.html">Quickstart - SkyShift with Slurm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ray Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ray/quickstart/ray_quickstart.html">Quickstart - SkyShift with Ray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ray/overview.html">Overview</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kubernetes Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes_support/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes_support/cloud.html">Provisioning Kubernetes Clusters on the Sky</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using SkyShift</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cli/clusters.html">Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/jobs.html">Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/namespaces.html">Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/filterpolicies.html">Filter Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/endpoints.html">Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/roles.html">Roles and Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/exec.html">Executing Commands Within Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/users.html">Users</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../examples/bookinfo.html">BookInfo Application Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/vllm.html">vLLM Serving Example</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/michaelzhiluo/skyshift" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/getting_started/cli_docs.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CLI Documentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift">skyshift</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-apply">apply</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-cluster">cluster</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-cluster-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-cluster-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-cluster-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-endpoints">endpoints</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-endpoints-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-endpoints-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-endpoints-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-exec">exec</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-filterpolicy">filterPolicy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-filterpolicy-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-filterpolicy-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-filterpolicy-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-invite">invite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-job">job</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-job-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-job-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-job-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-link">link</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-link-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-link-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-link-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-login">login</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-logs">logs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-namespace">namespace</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-namespace-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-namespace-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-namespace-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-port-forward">port-forward</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-register">register</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-revoke-invite">revoke_invite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-role">role</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-role-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-role-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-role-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-service">service</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-service-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-service-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-service-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-status">status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-use-context">use-context</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-use-context-config">config</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-user">user</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-user-delete">delete</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-users">users</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-users-get">get</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="cli-documentation">
+<h1>CLI Documentation<a class="headerlink" href="#cli-documentation" title="Link to this heading">#</a></h1>
+<section id="skyshift">
+<h2>skyshift<a class="headerlink" href="#skyshift" title="Link to this heading">#</a></h2>
+<p>SkyShift CLI</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-apply">
+<h3>apply<a class="headerlink" href="#skyshift-apply" title="Link to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>apply<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-apply-f">
+<span id="cmdoption-skyshift-apply-file"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--file</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;file&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-apply-f" title="Link to this definition">#</a></dt>
+<dd><p><strong>Required</strong> Path to config file (YAML).</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-cluster">
+<h3>cluster<a class="headerlink" href="#skyshift-cluster" title="Link to this heading">#</a></h3>
+<p>Commands for cluster</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>cluster<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-cluster-create">
+<h4>create<a class="headerlink" href="#skyshift-cluster-create" title="Link to this heading">#</a></h4>
+<p>Create a new cluster and attach to SkyShift. Once attached, the cluster can be
+managd via SkyShift and made available for jobs submitted to SkyShift.
+This supports clusters managed via Kubernetes, Slurm and Ray.</p>
+<p>Cluster creation supports customized provisioning requirements such as
+Nodes, Regions, CPU and Memory requirements. Post creation SkyShift monitors
+the status and makes it available to the user.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Create a basic cluster with Kuberntes</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>my-cluster<span class="w"> </span>--manager<span class="o">=</span>k8<span class="w"> </span>--cpus<span class="o">=</span><span class="m">4</span><span class="w"> </span>--memory<span class="o">=</span>16GB<span class="w"> </span>--disk_size<span class="o">=</span><span class="m">100</span><span class="w"> </span>--num_nodes<span class="o">=</span><span class="m">3</span>
+</pre></div>
+</div>
+<p>The above command creates a cluster named <cite>my-cluster</cite> with Kubernetes as the cluster manager.
+The cluster will be provisioned with 3 nodes, each node with 4 virtual CPUs (vCPUs), 16GB of
+memory, and a 100GB OS disk. Additionally configs, host, username and other properties can be
+passed for any custom requirements.</p>
+</li>
+<li><p><strong>Create a GPU-Accelerated Cluster via Ray</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>gpu-cluster<span class="w"> </span>--manager<span class="o">=</span>ray<span class="w"> </span>--cpus<span class="o">=</span><span class="m">8</span><span class="w"> </span>--memory<span class="o">=</span>64GB<span class="w"> </span>--accelerators<span class="o">=</span>V100:2
+<span class="w"> </span>--num_nodes<span class="o">=</span><span class="m">5</span><span class="w"> </span>--cloud<span class="o">=</span>gcp<span class="w"> </span>--region<span class="o">=</span>us-central1<span class="w"> </span>--ports<span class="o">=</span><span class="m">22</span>,8888<span class="w"> </span>--provision
+</pre></div>
+</div>
+<p>This command sets up a cluster named <cite>gpu-cluster</cite> managed by Ray. It provisions 5 nodes in
+the cluster. Each node provisioned with 8 vCPUs, 64GB of memory, and 2 NVIDIA V100 GPUs. The
+cloud flag indicates the cluster provisioning on GCP with us-central1 region. Further, it opens
+up ports 22 and 8888 for remote access via SSH or Jupyter notebook.</p>
+</li>
+<li><p><strong>Cluster with Specific Cloud and Region</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>cloud-cluster<span class="w"> </span>--cloud<span class="o">=</span>aws<span class="w"> </span>--region<span class="o">=</span>us-west-2<span class="w"> </span>--manager<span class="o">=</span>slurm<span class="w"> </span>--cpus<span class="o">=</span><span class="m">16</span>
+<span class="w"> </span>--memory<span class="o">=</span>128GB
+</pre></div>
+</div>
+<p>This command creates a cluster named <cite>cloud-cluster</cite> on AWS. Slurm will be  used as the cluster
+manager. The cluster will be provisioned in the <cite>us-west-2</cite> region. Each node in this cluster
+will have 16 vCPUs and 128GB of memory.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>cluster<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-l">
+<span id="cmdoption-skyshift-cluster-create-labels"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--labels</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;labels&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-l" title="Link to this definition">#</a></dt>
+<dd><p>Key-value pairs for cluster labels</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-manager">
+<span class="sig-name descname"><span class="pre">--manager</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;manager&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-manager" title="Link to this definition">#</a></dt>
+<dd><p><strong>Required</strong> Cluster manager type (e.g. k8, slurm, ray).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'k8'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-cpus">
+<span class="sig-name descname"><span class="pre">--cpus</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cpus&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-cpus" title="Link to this definition">#</a></dt>
+<dd><p>Number of vCPUs per node (e.g. 1, 1+).</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-memory">
+<span class="sig-name descname"><span class="pre">--memory</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;memory&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-memory" title="Link to this definition">#</a></dt>
+<dd><p>Amount of memory each instance must have in GB. (e.g. 32, 32+).</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-disk_size">
+<span class="sig-name descname"><span class="pre">--disk_size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;disk_size&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-disk_size" title="Link to this definition">#</a></dt>
+<dd><p>OS disk size in GBs</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-accelerators">
+<span class="sig-name descname"><span class="pre">--accelerators</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;accelerators&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-accelerators" title="Link to this definition">#</a></dt>
+<dd><p>Type and number of GPU accelerators to use</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-ports">
+<span class="sig-name descname"><span class="pre">--ports</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;ports&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-ports" title="Link to this definition">#</a></dt>
+<dd><p>Ports to open on the cluster</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-num_nodes">
+<span class="sig-name descname"><span class="pre">--num_nodes</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;num_nodes&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-num_nodes" title="Link to this definition">#</a></dt>
+<dd><p>Number of SkyPilot nodes to allocate to the cluster</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-cloud">
+<span class="sig-name descname"><span class="pre">--cloud</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cloud&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-cloud" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-region">
+<span class="sig-name descname"><span class="pre">--region</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;region&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-region" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-k">
+<span id="cmdoption-skyshift-cluster-create-ssh_key_path"></span><span class="sig-name descname"><span class="pre">-k</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--ssh_key_path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;ssh_key_path&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-k" title="Link to this definition">#</a></dt>
+<dd><p>SSH key to use for Ray clusters. It can be a path to a file or the key itself</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">''</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-c">
+<span id="cmdoption-skyshift-cluster-create-C"></span><span id="cmdoption-skyshift-cluster-create-config"></span><span class="sig-name descname"><span class="pre">-c</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--config</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;config&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-c" title="Link to this definition">#</a></dt>
+<dd><p>Config file for the cluster.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">''</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-h">
+<span id="cmdoption-skyshift-cluster-create-H"></span><span id="cmdoption-skyshift-cluster-create-host"></span><span id="cmdoption-skyshift-cluster-create-hostname"></span><span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">-H</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--host</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--hostname</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;host&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-h" title="Link to this definition">#</a></dt>
+<dd><p>Host to use for the cluster</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">''</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-u">
+<span id="cmdoption-skyshift-cluster-create-username"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--username</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;username&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-u" title="Link to this definition">#</a></dt>
+<dd><p>Username to use for the cluster</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">''</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-provision">
+<span class="sig-name descname"><span class="pre">--provision</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-provision" title="Link to this definition">#</a></dt>
+<dd><p>True if cluster needs to be provisioned on the cloud.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-create-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-cluster-create-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-cluster-delete">
+<h4>delete<a class="headerlink" href="#skyshift-cluster-delete" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">delete</span> <span class="pre">cluster</span></code> command removes a cluster from SkyShift. For a cluster
+being managed by SkyShift, this command simply detaches the cluster. If the
+cluster was provided using SkyShift, this command also removes the cluster from
+the cloud provider.</p>
+<dl>
+<dt>Examples:</dt><dd><p><strong>Delete a Cluster Managed by SkyShift</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>cluster<span class="w"> </span>my-cluster
+</pre></div>
+</div>
+<p>This command deletes the cluster named <cite>my-cluster</cite> from SkyShift. If the cluster
+was only managed (but not provisioned) by SkyShift, it will simply be detached
+from SkyShift’s management. If it was provisioned by SkyShift, the cluster will
+be deleted from the cloud provider as well.</p>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>cluster<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-delete-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-cluster-delete-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-cluster-get">
+<h4>get<a class="headerlink" href="#skyshift-cluster-get" title="Link to this heading">#</a></h4>
+<p>The get cluster command fetches and displays details for one or all clusters
+being managed by SkyShift. This provides the names, managers, statuses, and
+resources (allocated/available) on the cluster.
+You can view all the clusters and their metadata by not providing a specific
+cluster.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Details for All Clusters</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>skyctl<span class="w"> </span>get<span class="w"> </span>cluster
+
+⠙<span class="w"> </span>Fetching<span class="w"> </span>clusters
+<span class="w"> </span>NAME<span class="w">      </span>MANAGER<span class="w">    </span>LABELS<span class="w">    </span>RESOURCES<span class="w">                  </span>STATUS<span class="w">    </span>AGE
+<span class="w"> </span>minikube<span class="w">  </span>k8<span class="w">                   </span>cpus:<span class="w"> </span><span class="m">15</span>.25/16.0<span class="w">           </span>ERROR<span class="w">     </span>12d
+<span class="w">                                </span>memory:<span class="w"> </span><span class="m">15</span>.18<span class="w"> </span>GB/15.35<span class="w"> </span>GB
+<span class="w">                                </span>disk:<span class="w"> </span><span class="m">151</span>.13<span class="w"> </span>GB/151.13<span class="w"> </span>GB
+<span class="w"> </span>✔<span class="w"> </span>Fetching<span class="w"> </span>clusters<span class="w"> </span>completed<span class="w"> </span>successfully.
+</pre></div>
+</div>
+<p>Running this command without specifying a cluster name will fetch and display details
+for all clusters being managed by SkyShift. This includes each cluster’s name, manager type,
+current status, resource allocations and age.</p>
+</li>
+<li><p><strong>Fetch Details for a Specific Cluster</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>cluster<span class="w"> </span>my-cluster
+</pre></div>
+</div>
+<p>This command fetches and displays details for the cluster named <cite>my-cluster</cite>. The output
+will include the specific details of the cluster, such as the manager type, current status,
+and allocated resources.</p>
+</li>
+<li><p><strong>Watch for Changes in a Specific Cluster</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>cluster<span class="w"> </span>my-cluster<span class="w"> </span>--watch
+
+⠧<span class="w"> </span>Fetching<span class="w"> </span><span class="nv">clusterskind</span><span class="o">=</span><span class="s1">&#39;WatchEvent&#39;</span><span class="w"> </span><span class="nv">event_type</span><span class="o">=</span><span class="s1">&#39;UPDATE&#39;</span><span class="w"> </span><span class="nv">object</span><span class="o">=</span>Cluster<span class="o">(</span><span class="nv">kind</span><span class="o">=</span><span class="s1">&#39;Cluster&#39;</span>,
+<span class="w"> </span><span class="nv">metadata</span><span class="o">=</span>ClusterMeta<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;minikube&#39;</span>,<span class="w"> </span><span class="nv">labels</span><span class="o">={}</span>,<span class="w"> </span><span class="nv">annotations</span><span class="o">={}</span>,<span class="w"> </span><span class="nv">creation_timestamp</span><span class="o">=</span><span class="s1">&#39;2024-08-25T07:52:58&#39;</span>,
+<span class="w"> </span><span class="nv">resource_version</span><span class="o">=</span><span class="m">15163</span><span class="o">)</span>,<span class="w"> </span><span class="nv">spec</span><span class="o">=</span>ClusterSpec<span class="o">(</span><span class="nv">manager</span><span class="o">=</span><span class="s1">&#39;k8&#39;</span>,<span class="w"> </span><span class="nv">cloud</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">region</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">cpus</span><span class="o">=</span>None,
+<span class="w"> </span><span class="nv">memory</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">disk_size</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">accelerators</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">ports</span><span class="o">=[]</span>,<span class="w"> </span><span class="nv">num_nodes</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">provision</span><span class="o">=</span>False,
+<span class="w"> </span><span class="nv">config_path</span><span class="o">=</span><span class="s1">&#39;~/.kube/config&#39;</span>,<span class="w"> </span><span class="nv">access_config</span><span class="o">={})</span>,<span class="w"> </span><span class="nv">status</span><span class="o">=</span>ClusterStatus<span class="o">(</span><span class="nv">conditions</span><span class="o">=</span>
+<span class="w"> </span><span class="o">[{</span><span class="s1">&#39;status&#39;</span>:<span class="w"> </span><span class="s1">&#39;INIT&#39;</span>,<span class="w"> </span><span class="s1">&#39;transitionTime&#39;</span>:<span class="w"> </span><span class="s1">&#39;1724572270.4890375&#39;</span><span class="o">}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;status&#39;</span>:<span class="w"> </span><span class="s1">&#39;READY&#39;</span>,<span class="w"> </span><span class="s1">&#39;transitionTime&#39;</span>:
+<span class="w"> </span><span class="s1">&#39;1724572378.7774274&#39;</span><span class="o">}</span>,<span class="w"> </span><span class="o">{</span><span class="s1">&#39;status&#39;</span>:<span class="w"> </span><span class="s1">&#39;ERROR&#39;</span>,<span class="w"> </span><span class="s1">&#39;transitionTime&#39;</span>:<span class="w"> </span><span class="s1">&#39;1725679618.1222773&#39;</span><span class="o">}]</span>,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="s1">&#39;ERROR&#39;</span>,
+<span class="w"> </span><span class="nv">allocatable_capacity</span><span class="o">={</span><span class="s1">&#39;minikube&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cpus&#39;</span>:<span class="w"> </span><span class="m">15</span>.250000000000002,<span class="w"> </span><span class="s1">&#39;memory&#39;</span>:<span class="w"> </span><span class="m">15543</span>.71484375,
+<span class="w"> </span><span class="s1">&#39;disk&#39;</span>:<span class="w"> </span><span class="m">154755</span>.10546875,<span class="w"> </span><span class="s1">&#39;gpus&#39;</span>:<span class="w"> </span><span class="m">0</span>.0<span class="o">}}</span>,<span class="w"> </span><span class="nv">capacity</span><span class="o">={</span><span class="s1">&#39;minikube&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;cpus&#39;</span>:<span class="w"> </span><span class="m">16</span>.0,<span class="w"> </span><span class="s1">&#39;memory&#39;</span>:<span class="w"> </span><span class="m">15713</span>.71484375,
+<span class="w"> </span><span class="s1">&#39;disk&#39;</span>:<span class="w"> </span><span class="m">154755</span>.10546875,<span class="w"> </span><span class="s1">&#39;gpus&#39;</span>:<span class="w"> </span><span class="m">0</span>.0<span class="o">}}</span>,<span class="w"> </span><span class="nv">network_enabled</span><span class="o">=</span>False,<span class="w"> </span><span class="nv">accelerator_types</span><span class="o">={}))</span>
+</pre></div>
+</div>
+<p>By adding the <cite>–watch</cite> flag, this command continuously monitors <cite>my-cluster</cite> for any
+changes. It will provide real-time updates on the cluster’s status, resources, and other
+relevant details as they change.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>cluster<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-get-w">
+<span id="cmdoption-skyshift-cluster-get-watch"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-cluster-get-w" title="Link to this definition">#</a></dt>
+<dd><p>Performs a watch.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-cluster-get-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-cluster-get-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-endpoints">
+<h3>endpoints<a class="headerlink" href="#skyshift-endpoints" title="Link to this heading">#</a></h3>
+<p>Commands for endpoints</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>endpoints<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-endpoints-create">
+<h4>create<a class="headerlink" href="#skyshift-endpoints-create" title="Link to this heading">#</a></h4>
+<p>Creates a new set of endpoints within a specified namespace, customizable via user provided
+arguments. This command sets up endpoints, which represent network-accessible points
+associated with a service. These endpoints can be configured to be exposed within a
+cluster and can target specific resources based on label selectors.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Create Endpoints with Default Settings</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>endpoints<span class="w"> </span>my-endpoints<span class="w"> </span>--num_endpoints<span class="o">=</span><span class="m">3</span>
+</pre></div>
+</div>
+<p>This command creates a set of endpoints named <cite>my-endpoints</cite> in the <cite>default</cite> namespace.
+The endpoints are not exposed to the cluster by default, and they do not have any specific
+label selectors targeting resources.</p>
+</li>
+<li><p><strong>Create Exposed Endpoints in a Custom Cluster</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>endpoints<span class="w"> </span>exposed-endpoints<span class="w"> </span>--num_endpoints<span class="o">=</span><span class="m">5</span><span class="w"> </span>--exposed<span class="w"> </span>--primary_cluster<span class="o">=</span>clusterA
+</pre></div>
+</div>
+<p>This command creates a set of endpoints named <cite>exposed-endpoints</cite> in the <cite>default</cite> namespace.
+The endpoints are exposed to <cite>clusterA</cite> and can be accessed from other services within that cluster.
+Five endpoints are created in this configuration.</p>
+</li>
+<li><p><strong>Create Endpoints with Specific Label Selectors</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>endpoints<span class="w"> </span>labeled-endpoints<span class="w"> </span>--num_endpoints<span class="o">=</span><span class="m">2</span><span class="w"> </span>--selector<span class="w"> </span>app<span class="w"> </span>web
+</pre></div>
+</div>
+<p>This command creates a set of endpoints named <cite>labeled-endpoints</cite> in the <cite>default</cite> namespace.
+The endpoints are configured to target resources labeled with <cite>app=web</cite>. Two endpoints are created
+in this setup.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>endpoints<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-create-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-create-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace for the endpoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-create-num_endpoints">
+<span class="sig-name descname"><span class="pre">--num_endpoints</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;num_endpoints&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-create-num_endpoints" title="Link to this definition">#</a></dt>
+<dd><p>Number of endpoints.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-create-exposed">
+<span class="sig-name descname"><span class="pre">--exposed</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-create-exposed" title="Link to this definition">#</a></dt>
+<dd><p>Whether the endpoints are exposed to the cluster.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-create-primary_cluster">
+<span class="sig-name descname"><span class="pre">--primary_cluster</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;primary_cluster&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-create-primary_cluster" title="Link to this definition">#</a></dt>
+<dd><p>Primary cluster where the endpoints are exposed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'auto'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-create-selector">
+<span class="sig-name descname"><span class="pre">--selector</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;selector&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-create-selector" title="Link to this definition">#</a></dt>
+<dd><p>Selector key-value pairs.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-create-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-create-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-endpoints-delete">
+<h4>delete<a class="headerlink" href="#skyshift-endpoints-delete" title="Link to this heading">#</a></h4>
+<p>Use the delete endpoints command to permanently remove any endpoint being
+managed by SkyShift.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Delete Endpoints from the Default Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>endpoints<span class="w"> </span>my-endpoints<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command deletes the <cite>my-endpoints</cite> from the <cite>default</cite> namespace. Once deleted, the endpoints
+will no longer be available, and any resources or services associated with them will be disconnected.</p>
+</li>
+<li><p><strong>Delete Endpoints from a Custom Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>endpoints<span class="w"> </span>my-endpoints<span class="w"> </span>--namespace<span class="o">=</span>production
+</pre></div>
+</div>
+<p>This command deletes the <cite>my-endpoints</cite> from the <cite>production</cite> namespace. This is useful for cleaning up
+endpoints that are no longer needed in a specific environment or namespace.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>endpoints<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-delete-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-delete-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to service`s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-delete-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-delete-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-endpoints-get">
+<h4>get<a class="headerlink" href="#skyshift-endpoints-get" title="Link to this heading">#</a></h4>
+<p>Use the get endpoints command to fetch the details about one specific or all
+endpoints within a given namespace, with an optional watch functionality.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Details for All Endpoints</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>endpoints<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command fetches and displays details for all endpoints within the <cite>default</cite> namespace.
+It provides an overview of each set of endpoints, including their configuration, exposure status,
+and any associated selectors.</p>
+</li>
+<li><p><strong>Fetch Details for a Specific Set of Endpoints</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>endpoints<span class="w"> </span>my-endpoints<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command fetches and displays detailed information about the <cite>my-endpoints</cite> within the <cite>default</cite> namespace.
+The output includes specific details such as the number of endpoints, exposure status, primary cluster,
+and any label selectors applied.</p>
+</li>
+<li><p><strong>Watch a Specific Set of Endpoints for Changes</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>endpoints<span class="w"> </span>my-endpoints<span class="w"> </span>--namespace<span class="o">=</span>default<span class="w"> </span>--watch
+</pre></div>
+</div>
+<p>By adding the <cite>–watch</cite> flag, this command continuously monitors the <cite>my-endpoints</cite> for any changes in their details.
+This is useful for real-time monitoring of endpoint updates, allowing you to track changes as they occur.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>endpoints<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-get-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-get-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to service`s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-get-watch">
+<span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-get-watch" title="Link to this definition">#</a></dt>
+<dd><p>Performs a watch.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-endpoints-get-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-endpoints-get-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-exec">
+<h3>exec<a class="headerlink" href="#skyshift-exec" title="Link to this heading">#</a></h3>
+<p>Executes a specified command within a container of a resource.</p>
+<p>This function supports executing commands in various modes, including direct execution
+and TTY (interactive) mode.
+It is capable of targeting specific clusters, tasks (pods), and containers, providing
+flexibility in how commands are executed across the infrastructure. It handles both
+single and multiple targets with appropriate checks and balances to ensure the command
+execution context is correctly established.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Execute a Simple Command in a Resource</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>my-pod<span class="w"> </span>ls<span class="w"> </span>/app
+</pre></div>
+</div>
+<p>This command runs the <cite>ls /app</cite> command in the <cite>my-pod</cite> resource within the default namespace.
+The command lists the contents of the <cite>/app</cite> directory in the specified pod.</p>
+</li>
+<li><p><strong>Execute a Command in a Specific Container of a Pod</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>my-pod<span class="w"> </span>--containers<span class="o">=</span>my-container<span class="w"> </span>ls<span class="w"> </span>/app
+</pre></div>
+</div>
+<p>This command runs the <cite>ls /app</cite> command in the <cite>my-container</cite> within the <cite>my-pod</cite> resource.
+It targets a specific container within the pod, allowing for granular command execution.</p>
+</li>
+<li><p><strong>Execute a Command with TTY (Interactive) Mode</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>my-pod<span class="w"> </span>--tty<span class="w"> </span>bash
+</pre></div>
+</div>
+<p>This command opens an interactive <cite>bash</cite> shell in the <cite>my-pod</cite> resource, enabling user interaction
+with the shell through a TTY (interactive) session.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>RESOURCE<span class="w"> </span>COMMAND...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-exec-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-exec-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to job’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-exec-t">
+<span id="cmdoption-skyshift-exec-tasks"></span><span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--tasks</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;tasks&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-exec-t" title="Link to this definition">#</a></dt>
+<dd><p>Task name where the command will be executed. This option can be repeated to         specify multiple pods.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-exec-cts">
+<span id="cmdoption-skyshift-exec-containers"></span><span class="sig-name descname"><span class="pre">-cts</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--containers</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;containers&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-exec-cts" title="Link to this definition">#</a></dt>
+<dd><p>Container name where the command will be executed. This option can be repeated         to specify multiple containers.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-exec-q">
+<span id="cmdoption-skyshift-exec-quiet"></span><span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--quiet</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-exec-q" title="Link to this definition">#</a></dt>
+<dd><p>Only print output from the remote session.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-exec-it">
+<span id="cmdoption-skyshift-exec-ti"></span><span id="cmdoption-skyshift-exec-tty"></span><span class="sig-name descname"><span class="pre">-it</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">-ti</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--tty</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-exec-it" title="Link to this definition">#</a></dt>
+<dd><p>Stdin is a TTY.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-exec-arg-RESOURCE">
+<span class="sig-name descname"><span class="pre">RESOURCE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-exec-arg-RESOURCE" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-exec-arg-COMMAND">
+<span class="sig-name descname"><span class="pre">COMMAND</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-exec-arg-COMMAND" title="Link to this definition">#</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-filterpolicy">
+<h3>filterPolicy<a class="headerlink" href="#skyshift-filterpolicy" title="Link to this heading">#</a></h3>
+<p>Commands for filterPolicy</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>filterPolicy<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-filterpolicy-create">
+<h4>create<a class="headerlink" href="#skyshift-filterpolicy-create" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">filterPolicy</span></code> command introduces a new filter policy into SkyShift, dictating
+the scheduling eligibility of clusters based on the specified inclusion and exclusion criteria.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Create a Filter Policy with Specific Label Selectors</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>filterPolicy<span class="w"> </span>my-policy<span class="w"> </span>-l<span class="w"> </span>env<span class="w"> </span>production<span class="w"> </span>-i<span class="w"> </span>clusterA<span class="w"> </span>-e<span class="w"> </span>clusterB
+</pre></div>
+</div>
+<p>This command creates a filter policy named <cite>my-policy</cite> in the <cite>default</cite> namespace. The
+policy applies to resources  labeled with <cite>env=production</cite>, includes clusterA and excludes
+clusterB during scheduling.</p>
+</li>
+<li><p><strong>Create a Filter Policy in a Custom Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>filterPolicy<span class="w"> </span>custom-policy<span class="w"> </span>--namespace<span class="w"> </span>custom-namespace<span class="w"> </span>-i<span class="w"> </span>clusterA<span class="w"> </span>-i<span class="w"> </span>clusterB
+</pre></div>
+</div>
+<p>This command creates a filter policy named <cite>custom-policy</cite> in the <cite>custom-namespace</cite> namespace.
+The policy includes  both <cite>clusterA</cite> and <cite>clusterB</cite> in the scheduling process.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>filterPolicy<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-create-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-create-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to policy’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-create-l">
+<span id="cmdoption-skyshift-filterPolicy-create-labelSelector"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--labelSelector</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;labelselector&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-create-l" title="Link to this definition">#</a></dt>
+<dd><p>Key-value pairs for selecting over labels.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-create-i">
+<span id="cmdoption-skyshift-filterPolicy-create-includeCluster"></span><span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--includeCluster</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;includecluster&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-create-i" title="Link to this definition">#</a></dt>
+<dd><p>Clusters to include in scheduling..</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-create-e">
+<span id="cmdoption-skyshift-filterPolicy-create-excludeCluster"></span><span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--excludeCluster</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;excludecluster&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-create-e" title="Link to this definition">#</a></dt>
+<dd><p>Clusters to exclude in scheduling..</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-create-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-create-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-filterpolicy-delete">
+<h4>delete<a class="headerlink" href="#skyshift-filterpolicy-delete" title="Link to this heading">#</a></h4>
+<p>Deletes the specified filter policy from the given namespace. Use this command
+to permanently remove the filter policy identified by the given name from the namespace.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Delete a Filter Policy</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>filterPolicy<span class="w"> </span>my-policy<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command deletes the <cite>my-policy</cite> filter policy from the <cite>default</cite> namespace.
+Once deleted, the filter policy is permanently removed, and any scheduling rules
+or constraints associated with it are no longer applied.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>filterPolicy<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-delete-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-delete-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to policy’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-delete-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-delete-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-filterpolicy-get">
+<h4>get<a class="headerlink" href="#skyshift-filterpolicy-get" title="Link to this heading">#</a></h4>
+<p>Fetches details about all or one specific filter policy within a namespace. This
+command provides detailed information about the specified filter policy or all
+policies if no name is provided. If the <cite>watch</cite> option is enabled, it continuously
+monitors and output updates for the policy(s).</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Details for All Filter Policies</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>filterPolicy<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command fetches and displays details for all filter policies within the
+<cite>default</cite> namespace. It provides an overview of each policy, including its name,
+associated labels, and inclusion/exclusion criteria.</p>
+</li>
+<li><p><strong>Fetch Details for a Specific Filter Policy</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>filterPolicy<span class="w"> </span>my-policy<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command fetches and displays detailed information about the <cite>my-policy</cite> filter
+policy within the <cite>default</cite> namespace. The output includes specific details such as
+the policy’s inclusion/exclusion clusters and label selectors.</p>
+</li>
+<li><p><strong>Watch a Specific Filter Policy for Changes</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>filterPolicy<span class="w"> </span>my-policy<span class="w"> </span>--namespace<span class="o">=</span>default<span class="w"> </span>--watch
+</pre></div>
+</div>
+<p>By adding the <cite>–watch</cite> flag, this command continuously monitors the <cite>my-policy</cite>
+filter policy for any changes in its details. This is useful for real-time monitoring
+of policy updates, allowing you to track changes as they occur.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>filterPolicy<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-get-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-get-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to policy’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-get-watch">
+<span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-get-watch" title="Link to this definition">#</a></dt>
+<dd><p>Performs a watch.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-filterPolicy-get-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-filterPolicy-get-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-invite">
+<h3>invite<a class="headerlink" href="#skyshift-invite" title="Link to this heading">#</a></h3>
+<p>Creates a new invitation key for user registration, allowing outputting in JSON format.
+This command generates an invitation key that can be used for registering new users
+into SkyShift. It can be configured to associate specific roles with the invite, which
+will then be assigned to the user upon registration.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Create a Simple Invite</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>invite
+</pre></div>
+</div>
+<p>This command generates a new invitation key without any associated roles. The invite key will
+be printed to the console.</p>
+</li>
+<li><p><strong>Create an Invite with Roles</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>invite<span class="w"> </span>--role<span class="o">=</span>admin<span class="w"> </span>--role<span class="o">=</span>developer
+</pre></div>
+</div>
+<p>This command generates an invitation key associated with the <cite>admin</cite> and <cite>developer</cite> roles.
+When a user registers using this invite, they will be granted the specified roles.</p>
+</li>
+<li><p><strong>Create an Invite and Output in JSON Format</strong>:
+.. code-block:: bash</p>
+<blockquote>
+<div><p>skyctl invite –json</p>
+</div></blockquote>
+<p>This command generates an invitation key and outputs it in JSON format. The JSON object will
+include the invite key under the key ‘invite’.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>invite<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-invite-json">
+<span class="sig-name descname"><span class="pre">--json</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-invite-json" title="Link to this definition">#</a></dt>
+<dd><p>Output the invite in json format if succeeds. Key is ‘invite’.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-invite-r">
+<span id="cmdoption-skyshift-invite-role"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--role</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;role&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-invite-r" title="Link to this definition">#</a></dt>
+<dd><p>Enter ROLE names intended as part of the invite.</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-job">
+<h3>job<a class="headerlink" href="#skyshift-job" title="Link to this heading">#</a></h3>
+<p>Commands for job</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>job<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-job-create">
+<h4>create<a class="headerlink" href="#skyshift-job-create" title="Link to this heading">#</a></h4>
+<p>The create job command allows submission of a new job to SkyShift. You can
+also customize the specific job requirements such as Replicas, Memory, CPU
+and more. SkyShift matches the requirements with the available resources to
+best run the job. See more in`scheduling`.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Create a Basic Job</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>job<span class="w"> </span>basic-job<span class="w"> </span>--cpus<span class="o">=</span><span class="m">2</span><span class="w"> </span>--memory<span class="o">=</span><span class="m">1024</span><span class="w"> </span>--run<span class="o">=</span><span class="s2">&quot;python script.py&quot;</span>
+</pre></div>
+</div>
+<p>This command creates a job named <cite>basic-job</cite> with 2 CPUs and 1024 MB of memory
+per task. The job runs the command <cite>python script.py</cite> inside the container.</p>
+</li>
+<li><p><strong>Create a GPU-Accelerated Job</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>job<span class="w"> </span>gpu-job<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>--accelerators<span class="o">=</span>V100:1<span class="w"> </span>--run<span class="o">=</span><span class="s2">&quot;python train.py&quot;</span><span class="w"> </span>--replicas<span class="o">=</span><span class="m">4</span>
+</pre></div>
+</div>
+<p>This command creates a job named <cite>gpu-job</cite> that uses 1 GPU per task, specifically
+an NVIDIA V100. The job will run 4 replicas of <cite>python train.py</cite>, which is useful
+for parallel training jobs.</p>
+</li>
+<li><p><strong>Create a Job with Custom Docker Image and Environment Variables</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>job<span class="w"> </span>custom-job<span class="w"> </span>--image<span class="o">=</span>tensorflow/tensorflow:latest-gpu<span class="w"> </span>--envs<span class="o">=</span><span class="nv">MY_VAR</span><span class="o">=</span>value<span class="w"> </span>--run<span class="o">=</span><span class="s2">&quot;bash start.sh&quot;</span>
+</pre></div>
+</div>
+<p>This command creates a job named <cite>custom-job</cite> using a specific Docker image
+(<cite>tensorflow/tensorflow:latest-gpu</cite>). It also sets the environment variable
+<cite>MY_VAR</cite> to <cite>value</cite> inside the container and runs <cite>bash start.sh</cite> as the
+job command.</p>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p><strong>Create a Long-Running Job with Specific Restart Policy</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>job<span class="w"> </span>long-running-job<span class="w"> </span>--cpus<span class="o">=</span><span class="m">4</span><span class="w"> </span>--memory<span class="o">=</span><span class="m">2048</span><span class="w"> </span>--run<span class="o">=</span><span class="s2">&quot;python server.py&quot;</span><span class="w"> </span>--restart_policy<span class="o">=</span>Always
+</pre></div>
+</div>
+<p>This creates a job named <cite>long-running-job</cite> with 4 CPUs and 2048 MB of memory per task. The job runs the
+command <cite>python server.py</cite> inside the container. The restart policy is set to <cite>Always</cite>, meaning that the
+job will be automatically restarted if it fails, which is ideal for long-running jobs like web servers.</p>
+</li>
+<li><p><strong>Create a Batch Job with No Restart</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>job<span class="w"> </span>batch-job<span class="w"> </span>--cpus<span class="o">=</span><span class="m">2</span><span class="w"> </span>--memory<span class="o">=</span><span class="m">1024</span><span class="w"> </span>--run<span class="o">=</span><span class="s2">&quot;python process_data.py&quot;</span><span class="w"> </span>--restart_policy<span class="o">=</span>Never
+</pre></div>
+</div>
+<p>This creates a job named <cite>batch-job</cite> with 2 CPUs and 1024 MB of memory per task. The job runs the command
+python process_data.py` inside the container. The restart policy is set to <cite>Never</cite>, which means the job
+will not be restarted if it fails, making it suitable for batch jobs that should run once and exit.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>job<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to job’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-l">
+<span id="cmdoption-skyshift-job-create-labels"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--labels</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;labels&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-l" title="Link to this definition">#</a></dt>
+<dd><p>Key-value pairs for job labels</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-image">
+<span class="sig-name descname"><span class="pre">--image</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;image&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-image" title="Link to this definition">#</a></dt>
+<dd><p>Image to run the job in (any docker registry image).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'ubuntu:latest'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-e">
+<span id="cmdoption-skyshift-job-create-envs"></span><span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--envs</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;envs&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-e" title="Link to this definition">#</a></dt>
+<dd><p>Pass in environment variables to the job.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-cpus">
+<span class="sig-name descname"><span class="pre">--cpus</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cpus&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-cpus" title="Link to this definition">#</a></dt>
+<dd><p>Number of CPUs per task.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-gpus">
+<span class="sig-name descname"><span class="pre">--gpus</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;gpus&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-gpus" title="Link to this definition">#</a></dt>
+<dd><p>Number of GPUs per task. Note that these GPUs can be any type of GPU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-a">
+<span id="cmdoption-skyshift-job-create-accelerators"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--accelerators</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;accelerators&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-a" title="Link to this definition">#</a></dt>
+<dd><p>Type of accelerator resource to use (e.g. T4:1, V100:2)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-memory">
+<span class="sig-name descname"><span class="pre">--memory</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;memory&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-memory" title="Link to this definition">#</a></dt>
+<dd><p>Total memory (RAM) per task in MB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-run">
+<span class="sig-name descname"><span class="pre">--run</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;run&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-run" title="Link to this definition">#</a></dt>
+<dd><p>Run command for the job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">''</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-replicas">
+<span class="sig-name descname"><span class="pre">--replicas</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;replicas&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-replicas" title="Link to this definition">#</a></dt>
+<dd><p>Number of replicas to run job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-restart_policy">
+<span class="sig-name descname"><span class="pre">--restart_policy</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;restart_policy&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-restart_policy" title="Link to this definition">#</a></dt>
+<dd><p>Restart policy for job tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'Always'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-v">
+<span id="cmdoption-skyshift-job-create-volumes"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--volumes</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;volumes&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-create-v" title="Link to this definition">#</a></dt>
+<dd><p>Volume mounts for the job.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-create-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-job-create-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-job-delete">
+<h4>delete<a class="headerlink" href="#skyshift-job-delete" title="Link to this heading">#</a></h4>
+<p>Deletes a specified job from the given namespace.
+This command permanently removes the job from the specified namespace.
+This terminates and de-allocates any resources provisioned to the job.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Delete a Job from the Default Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>job<span class="w"> </span>my-job<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command deletes the job named <cite>my-job</cite> from the <cite>default</cite> namespace.
+The job is terminated, and any associated resources are released.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>job<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-delete-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-delete-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to job’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-delete-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-job-delete-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-job-get">
+<h4>get<a class="headerlink" href="#skyshift-job-get" title="Link to this heading">#</a></h4>
+<p>The get job command fetches and displays any job which was submitted
+to SkyShift. This provides the metadata associated for the running job.
+Similar to get clusters, this allows continuously watching for any changes.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Details for All Jobs in a Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>job<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command fetches and displays details for all jobs within the <cite>default</cite> namespace.
+It will include metadata such as the job name, status, and associated resources.</p>
+</li>
+<li><p><strong>Fetch Details for a Specific Job</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>job<span class="w"> </span>my-job<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command fetches and displays details for the job named <cite>my-job</cite> in the <cite>default</cite> namespace.
+The output will include specific details of the job, such as its current status, start time,
+and resource usage.</p>
+</li>
+<li><p><strong>Watch a Specific Job for Changes</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>job<span class="w"> </span>my-job<span class="w"> </span>--namespace<span class="o">=</span>default<span class="w"> </span>--watch
+</pre></div>
+</div>
+<p>By adding the <cite>–watch</cite> flag, this command continuously monitors <cite>my-job</cite> for any changes in its
+status or other metadata. This is useful for tracking the progress of a job in real-time.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>job<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-get-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-job-get-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to job’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-get-w">
+<span id="cmdoption-skyshift-job-get-watch"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-job-get-w" title="Link to this definition">#</a></dt>
+<dd><p>Performs a watch.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-job-get-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-job-get-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-link">
+<h3>link<a class="headerlink" href="#skyshift-link" title="Link to this heading">#</a></h3>
+<p>Commands for link</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>link<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-link-create">
+<h4>create<a class="headerlink" href="#skyshift-link-create" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">link</span></code> command creates a new link between two specified clusters,
+enabling them to communicate directly with each other.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Create a Link Between Two Clusters</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>link<span class="w"> </span>data-link<span class="w"> </span>--source<span class="o">=</span>clusterA<span class="w"> </span>--target<span class="o">=</span>clusterB
+</pre></div>
+</div>
+<p>This command creates a link named <cite>data-link</cite> between <cite>clusterA</cite> (the source cluster)
+and <cite>clusterB</cite> (the target cluster). This allows the two clusters to communicate directly,
+facilitating data exchange or other interactions.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>link<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-link-create-s">
+<span id="cmdoption-skyshift-link-create-source"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--source</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;source&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-link-create-s" title="Link to this definition">#</a></dt>
+<dd><p><strong>Required</strong> Source cluster name</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-link-create-t">
+<span id="cmdoption-skyshift-link-create-target"></span><span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--target</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;target&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-link-create-t" title="Link to this definition">#</a></dt>
+<dd><p><strong>Required</strong> Target cluster name</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-link-create-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-link-create-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-link-delete">
+<h4>delete<a class="headerlink" href="#skyshift-link-delete" title="Link to this heading">#</a></h4>
+<p>The delete link command permanently removes the link (identified by the given name)
+from SkyShift.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Delete a Specific Link</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>link<span class="w"> </span>data-link
+</pre></div>
+</div>
+<p>This command deletes the <cite>data-link</cite> from SkyShift. Once deleted, the communication link
+between the source and target clusters is permanently removed, and any operations or data
+flows using this link are stopped.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>link<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-link-delete-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-link-delete-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-link-get">
+<h4>get<a class="headerlink" href="#skyshift-link-get" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">links</span></code> command fetches the details about one specific link or all links
+between clusters which were created by SkyShift, with an optional watch functionality.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Details for All Links</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>link
+</pre></div>
+</div>
+<p>This command fetches and displays details for all links created by SkyShift between
+clusters. It provides an overview of each link, including the source and target clusters
+and any relevant metadata.</p>
+</li>
+<li><p><strong>Fetch Details for a Specific Link</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>link<span class="w"> </span>data-link
+</pre></div>
+</div>
+<p>This command fetches and displays detailed information about the <cite>data-link</cite> link.
+The output includes specific details such as the source and target clusters, creation date,
+and current status of the link.</p>
+</li>
+<li><p><strong>Watch a Specific Link for Changes</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>link<span class="w"> </span>data-link<span class="w"> </span>--watch
+</pre></div>
+</div>
+<p>By adding the <cite>–watch</cite> flag, this command continuously monitors the <cite>data-link</cite> for any
+changes in its details. This is useful for real-time monitoring of link updates, allowing
+you to track changes as they occur.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>link<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-link-get-w">
+<span id="cmdoption-skyshift-link-get-watch"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-link-get-w" title="Link to this definition">#</a></dt>
+<dd><p>Performs a watch.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-link-get-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-link-get-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-login">
+<h3>login<a class="headerlink" href="#skyshift-login" title="Link to this heading">#</a></h3>
+<p>Logs a user into SkyShift using a username and password. This command authenticates
+a user based on the provided credentials. It is important to note that this login
+command does not change the current active user session but merely performs login
+authentication.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Login as a User</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>login<span class="w"> </span>myusername<span class="w"> </span>mypassword
+</pre></div>
+</div>
+<p>This command logs in the user with the username <cite>myusername</cite> and the password <cite>mypassword</cite>.
+The user is authenticated based on the provided credentials, but the active user session
+remains unchanged.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>login<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>USERNAME<span class="w"> </span>PASSWORD
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-login-arg-USERNAME">
+<span class="sig-name descname"><span class="pre">USERNAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-login-arg-USERNAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-login-arg-PASSWORD">
+<span class="sig-name descname"><span class="pre">PASSWORD</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-login-arg-PASSWORD" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-logs">
+<h3>logs<a class="headerlink" href="#skyshift-logs" title="Link to this heading">#</a></h3>
+<p>This command fetches and displays the logs for a specific job within a namespace.
+This can be useful for debugging or monitoring an on-going job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param str name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the job to fetch logs for.</p>
+</dd>
+<dt class="field-even">param str namespace<span class="colon">:</span></dt>
+<dd class="field-even"><p>The namespace of the job whose logs
+are to be fetched. Default is ‘default’.</p>
+</dd>
+</dl>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Logs for a Specific Job</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>logs<span class="w"> </span>my-job<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command retrieves and displays the logs for the job named <cite>my-job</cite> in
+the <cite>default</cite> namespace. The logs will be output directly to the console,
+allowing you to monitor the job’s execution or diagnose issues.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>logs<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-logs-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-logs-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to job’s namespace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-logs-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-logs-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-namespace">
+<h3>namespace<a class="headerlink" href="#skyshift-namespace" title="Link to this heading">#</a></h3>
+<p>Commands for namespace</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>namespace<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-namespace-create">
+<h4>create<a class="headerlink" href="#skyshift-namespace-create" title="Link to this heading">#</a></h4>
+<p>The create namespace command creates a new namespace within SkyShift.
+This command initializes a new namespace specified by the ‘name’ argument.
+You can use this for resource management, security and resource isolation
+within SkyShift.</p>
+<dl>
+<dt>Examples:</dt><dd><p><strong>Create a New Namespace</strong>:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev-environment
+</pre></div>
+</div>
+<p>This command creates a new namespace named <cite>dev-environment</cite>. SkyShift Namespaces
+can be used to group resources logically and enforce security and resource isolation.
+For example, you might create different namespaces for development, staging,
+and production environments.</p>
+</div></blockquote>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>namespace<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-namespace-create-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-namespace-create-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-namespace-delete">
+<h4>delete<a class="headerlink" href="#skyshift-namespace-delete" title="Link to this heading">#</a></h4>
+<p>Deletes a specified namespace from SkyShift. This command permanently
+removes the namespace being managed by SkyShift. Returns an error if
+the namespace does not exist.</p>
+<p>Example:
+<strong>Delete a Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>namespace<span class="w"> </span>dev-environment
+</pre></div>
+</div>
+<p>This command deletes the <cite>dev-environment</cite> namespace from SkyShift. Once deleted,
+all resources within this namespace are also removed, and the namespace cannot
+be recovered. This is typically used for cleaning up environments that are no longer needed.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>namespace<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-namespace-delete-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-namespace-delete-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-namespace-get">
+<h4>get<a class="headerlink" href="#skyshift-namespace-get" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">namespace</span></code> command allows fetching of details about one or all
+namespaces being managed by SkyShift. This command provides detailed information
+about the specified namespace or all namespaces if no name is provided. If the
+<cite>watch</cite> option is enabled, it will continuously monitor and output updates for
+the namespace(s).</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Details for All Namespaces</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>namespace
+</pre></div>
+</div>
+<p>This command fetches and displays details for all namespaces managed by SkyShift.
+It provides an overview of all available namespaces, including their status, name,
+and age.</p>
+</li>
+<li><p><strong>Fetch Details for a Specific Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>namespace<span class="w"> </span>dev-environment
+</pre></div>
+</div>
+<p>This command fetches and displays detailed information about the <cite>dev-environment</cite> namespace.
+The output includes metadata such as the namespace’s name, status and age.</p>
+</li>
+<li><p><strong>Watch a Specific Namespace for Changes</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>namespace<span class="w"> </span>dev-environment<span class="w"> </span>--watch
+</pre></div>
+</div>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>namespace<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-namespace-get-w">
+<span id="cmdoption-skyshift-namespace-get-watch"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-namespace-get-w" title="Link to this definition">#</a></dt>
+<dd><p>Performs a watch.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-namespace-get-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-namespace-get-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-port-forward">
+<h3>port-forward<a class="headerlink" href="#skyshift-port-forward" title="Link to this heading">#</a></h3>
+<p>Forward one or more local ports to a resource.
+This command allows you to forward local ports to a resource managed by SkyShift,
+similar to the <cite>kubectl port-forward</cite> command, but for SkyShift managed resources.
+You can specify the resource, ports to forward, and optionally the Kubernetes context and namespace.</p>
+<p>Examples:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><strong>Forward a Local Port to a Resource in a Specific Context and Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>port-forward<span class="w"> </span>pod/my-pod<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>--namespace<span class="w"> </span>my-namespace<span class="w"> </span>--manager<span class="o">=</span>k8<span class="w"> </span>--context<span class="w"> </span>my-k8s-context
+<span class="w"> </span>Forwarding<span class="w"> </span>from<span class="w"> </span><span class="m">127</span>.0.0.1:8080<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">8080</span>
+<span class="w"> </span>Forwarding<span class="w"> </span>from<span class="w"> </span><span class="o">[</span>::1<span class="o">]</span>:8080<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">8080</span>
+<span class="w"> </span>⠹<span class="w"> </span>Started<span class="w"> </span>port-forwarding
+</pre></div>
+</div>
+<p>This command forwards local port <cite>8080</cite> to port <cite>80</cite> on the pod <cite>my-pod</cite> in the <cite>my-namespace</cite> namespace,
+using the Kubernetes context <cite>my-k8s-context</cite>.</p>
+</li>
+<li><p><strong>Forward Multiple Ports to a Service Without Specifying Context</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>port-forward<span class="w"> </span>service/my-service<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span><span class="m">8443</span>:443<span class="w"> </span>--manager<span class="o">=</span>k8
+</pre></div>
+</div>
+<p>This command forwards local ports <cite>8080</cite> and <cite>8443</cite> to ports <cite>80</cite> and <cite>443</cite> on the service <cite>my-service</cite>
+in the default namespace, using the default Kubernetes context.</p>
+</li>
+</ol>
+</div></blockquote>
+<p>Note:</p>
+<ul class="simple">
+<li><p>The <cite>–manager</cite> option is required and must be set for Kubernetes resources.</p></li>
+<li><p>The <cite>–context</cite> option is optional. If provided, it specifies the Kubernetes context to use for port forwarding.</p></li>
+<li><p>The <cite>–namespace</cite> option specifies the namespace of the resource. Defaults to <cite>‘default’</cite> if not provided.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>port-forward<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>RESOURCE<span class="w"> </span>PORTS...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-port-forward-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-port-forward-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to the resource’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-port-forward-manager">
+<span class="sig-name descname"><span class="pre">--manager</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;manager&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-port-forward-manager" title="Link to this definition">#</a></dt>
+<dd><p><strong>Required</strong> Resource manager type (e.g., ‘k8’). Only ‘k8’ is supported.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-port-forward-context">
+<span class="sig-name descname"><span class="pre">--context</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;context&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-port-forward-context" title="Link to this definition">#</a></dt>
+<dd><p>Kubernetes context to use for port forwarding.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-port-forward-arg-RESOURCE">
+<span class="sig-name descname"><span class="pre">RESOURCE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-port-forward-arg-RESOURCE" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-port-forward-arg-PORTS">
+<span class="sig-name descname"><span class="pre">PORTS</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-port-forward-arg-PORTS" title="Link to this definition">#</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-register">
+<h3>register<a class="headerlink" href="#skyshift-register" title="Link to this heading">#</a></h3>
+<p>The register command registers a new user in the system within SkyShift based on an invitation.</p>
+<p>Username should be 4-50 characters long composed of upper or lower case alphabetics, digits and/or _.
+Password must be 5 or more characters.</p>
+<p>This command allows for the registration of a new user account, which is necessary for accessing
+and interacting with the system. It requires a username, password, and an invite key, to ensure
+that only authorized users can register.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Register a New User</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>register<span class="w"> </span>newuser<span class="w"> </span>mypassword<span class="w"> </span>--invite<span class="o">=</span>abcd1234<span class="w"> </span>--email<span class="o">=</span>newuser@example.com
+</pre></div>
+</div>
+<p>This command registers a new user with the username <cite>newuser</cite> and the password <cite>mypassword</cite>.
+The user is validated using the invite key <cite>abcd1234</cite> and the email address <cite>newuser&#64;example.com</cite>
+is associated with the account for notifications and recovery.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>register<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>USERNAME<span class="w"> </span>PASSWORD
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-register-inv">
+<span id="cmdoption-skyshift-register-invite"></span><span class="sig-name descname"><span class="pre">-inv</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--invite</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;invite&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-register-inv" title="Link to this definition">#</a></dt>
+<dd><p><strong>Required</strong> Invite key sent by admin.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-register-email">
+<span class="sig-name descname"><span class="pre">--email</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;email&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-register-email" title="Link to this definition">#</a></dt>
+<dd><p>Email address of the user.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-register-arg-USERNAME">
+<span class="sig-name descname"><span class="pre">USERNAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-register-arg-USERNAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-register-arg-PASSWORD">
+<span class="sig-name descname"><span class="pre">PASSWORD</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-register-arg-PASSWORD" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-revoke-invite">
+<h3>revoke_invite<a class="headerlink" href="#skyshift-revoke-invite" title="Link to this heading">#</a></h3>
+<p>The revoke invite command allows revoking an existing invitation key.
+This means the user will not be able to use it in the future for registering
+and account with SkySfhit.</p>
+<p>Examples:</p>
+<ol class="arabic simple">
+<li><p><strong>Revoke an Invitation Key</strong>:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>revoke_invite<span class="w"> </span>abcd1234
+</pre></div>
+</div>
+<p>This command revokes the invitation key <cite>abcd1234</cite>. After revocation, the
+key is invalid, and any attempt to use it for registration will fail.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>revoke_invite<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>INVITE
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-revoke_invite-arg-INVITE">
+<span class="sig-name descname"><span class="pre">INVITE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-revoke_invite-arg-INVITE" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-role">
+<h3>role<a class="headerlink" href="#skyshift-role" title="Link to this heading">#</a></h3>
+<p>Commands for role</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>role<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-role-create">
+<h4>create<a class="headerlink" href="#skyshift-role-create" title="Link to this heading">#</a></h4>
+<p>Creates a new role with specified permissions and access controls within SkyShift.
+This is highly customizable and allows access management for organizations where
+multiple users, namespaces and resources are involved.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Create a Role with Specific Actions and Resources</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>role<span class="w"> </span>admin-role<span class="w"> </span>--action<span class="o">=</span>create<span class="w"> </span>--action<span class="o">=</span>delete<span class="w"> </span>--resource<span class="o">=</span>pods<span class="w"> </span>--resource<span class="o">=</span>services
+</pre></div>
+</div>
+<p>This command creates a role named <cite>admin-role</cite> that grants permissions to create and delete <cite>pods</cite> and <cite>services</cite>.
+The role can be assigned to users or applied within specific namespaces as needed.</p>
+</li>
+<li><p><strong>Create a Role with Namespace Restrictions</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>role<span class="w"> </span>dev-role<span class="w"> </span>--action<span class="o">=</span>view<span class="w"> </span>--resource<span class="o">=</span>pods<span class="w"> </span>--namespace<span class="o">=</span>dev
+</pre></div>
+</div>
+<p>This command creates a role named <cite>dev-role</cite> that grants permission to view <cite>pods</cite> only within the <cite>dev</cite> namespace.
+This is useful for limiting the scope of access for users who only need to manage resources in specific environments.</p>
+</li>
+<li><p><strong>Create a Role and Assign it to Users</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>role<span class="w"> </span>team-lead<span class="w"> </span>--action<span class="o">=</span>manage<span class="w"> </span>--resource<span class="o">=</span>deployments<span class="w"> </span>--users<span class="o">=</span>user1<span class="w"> </span>--users<span class="o">=</span>user2
+</pre></div>
+</div>
+<p>This command creates a role named <cite>team-lead</cite> that grants the ability to manage <cite>deployments</cite>.
+The role is then assigned to <cite>user1</cite> and <cite>user2</cite>, giving them the permissions defined by the role.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>role<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-role-create-a">
+<span id="cmdoption-skyshift-role-create-action"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--action</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;action&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-role-create-a" title="Link to this definition">#</a></dt>
+<dd><p>List of actions for the role.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-role-create-r">
+<span id="cmdoption-skyshift-role-create-resource"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--resource</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;resource&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-role-create-r" title="Link to this definition">#</a></dt>
+<dd><p>List of resources for the role.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-role-create-n">
+<span id="cmdoption-skyshift-role-create-namespace"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-role-create-n" title="Link to this definition">#</a></dt>
+<dd><p>List of namespaces for the role.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-role-create-u">
+<span id="cmdoption-skyshift-role-create-users"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--users</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;users&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-role-create-u" title="Link to this definition">#</a></dt>
+<dd><p>List of users for the role.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-role-create-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-role-create-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-role-delete">
+<h4>delete<a class="headerlink" href="#skyshift-role-delete" title="Link to this heading">#</a></h4>
+<p>Deletes a specified role from SkyShift. Immediately revokes the role and associated permissions.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Delete a Specific Role</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>role<span class="w"> </span>admin-role
+</pre></div>
+</div>
+<p>This command deletes the <cite>admin-role</cite> from SkyShift. Once deleted, all permissions and access
+controls associated with this role are revoked, and the role can no longer be assigned to users.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>role<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-role-delete-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-role-delete-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-role-get">
+<h4>get<a class="headerlink" href="#skyshift-role-get" title="Link to this heading">#</a></h4>
+<p>The get roles command fetches the roles created in SkyShift and associated permissions/metadata.
+This also allows continuous monitoring to the role if watch is enabled.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Details for All Roles</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>role
+</pre></div>
+</div>
+<p>This command fetches and displays details for all roles created in SkyShift. It provides an overview
+of each role, including its name, associated permissions, resources, namespaces, and users.</p>
+</li>
+<li><p><strong>Fetch Details for a Specific Role</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>role<span class="w"> </span>admin-role
+</pre></div>
+</div>
+<p>This command fetches and displays detailed information about the <cite>admin-role</cite>. The output includes specific
+details such as the actions permitted by the role, the resources it controls, the namespaces where it applies,
+and the users assigned to it.</p>
+</li>
+<li><p><strong>Watch a Specific Role for Changes</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>role<span class="w"> </span>admin-role<span class="w"> </span>--watch
+</pre></div>
+</div>
+<p>By adding the <cite>–watch</cite> flag, this command continuously monitors the <cite>admin-role</cite> for any changes in its details.
+This is useful for real-time monitoring of role updates, allowing you to track changes as they occur.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>role<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-role-get-w">
+<span id="cmdoption-skyshift-role-get-watch"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-role-get-w" title="Link to this definition">#</a></dt>
+<dd><p>Performs a watch.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-role-get-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-role-get-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-service">
+<h3>service<a class="headerlink" href="#skyshift-service" title="Link to this heading">#</a></h3>
+<p>Commands for service</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>service<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-service-create">
+<h4>create<a class="headerlink" href="#skyshift-service-create" title="Link to this heading">#</a></h4>
+<p>“</p>
+<p>The create service command creates a new service within SkyShift. You can customize this
+for specific namespaces, specific service types, selectors, ports and clusters.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Create a Basic ClusterIP Service</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>service<span class="w"> </span>my-service<span class="w"> </span>--namespace<span class="o">=</span>default<span class="w"> </span>--service_type<span class="o">=</span>ClusterIP<span class="w"> </span>--ports<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">8080</span>
+</pre></div>
+</div>
+<p>This command creates a service named <cite>my-service</cite> in the <cite>default</cite> namespace. The service
+is of type <cite>ClusterIP</cite> and maps port <cite>80</cite> to <cite>8080</cite> on the target pods. This service
+will be available only within the cluster.</p>
+</li>
+<li><p><strong>Create a LoadBalancer Service with Selectors</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>service<span class="w"> </span>my-service<span class="w"> </span>-t<span class="w"> </span>LoadBalancer<span class="w"> </span>-s<span class="w"> </span>app<span class="w"> </span>web<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">8080</span>
+</pre></div>
+</div>
+<p>This command creates a <cite>LoadBalancer</cite> service named <cite>my-service</cite>. The service will select
+pods labeled with <cite>app=web</cite> and expose ports <cite>80</cite> and <cite>443</cite>, forwarding them to <cite>8080</cite> and
+<cite>8443</cite> on the target pods, respectively. This service will be accessible from outside the cluster.</p>
+</li>
+<li><p><strong>Create a Service in a Custom Cluster</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>service<span class="w"> </span>custom-service<span class="w"> </span>--namespace<span class="o">=</span>default<span class="w"> </span>--cluster<span class="w"> </span>clusterA<span class="w"> </span>--ports<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">8080</span>
+</pre></div>
+</div>
+<p>This command creates a service named <cite>custom-service</cite> in the <cite>default</cite> namespace, but it will be
+exposed on <cite>clusterA</cite>. The service maps port <cite>80</cite> to <cite>8080</cite> on the target pods and will be
+available within <cite>clusterA</cite>.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>service<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-create-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-service-create-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to service’s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-create-t">
+<span id="cmdoption-skyshift-service-create-service_type"></span><span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--service_type</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;service_type&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-service-create-t" title="Link to this definition">#</a></dt>
+<dd><p>Type of service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'NodePort'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-create-s">
+<span id="cmdoption-skyshift-service-create-selector"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--selector</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;selector&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-service-create-s" title="Link to this definition">#</a></dt>
+<dd><p>Label selectors.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-create-p">
+<span id="cmdoption-skyshift-service-create-ports"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--ports</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;ports&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-service-create-p" title="Link to this definition">#</a></dt>
+<dd><p>Port pairs for service (&lt;port&gt;:&lt;containerPort/targetPort&gt;). Defaults to TCP connection.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-create-c">
+<span id="cmdoption-skyshift-service-create-cluster"></span><span class="sig-name descname"><span class="pre">-c</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--cluster</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cluster&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-service-create-c" title="Link to this definition">#</a></dt>
+<dd><p>Cluster to expose service on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'auto'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-create-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-service-create-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-service-delete">
+<h4>delete<a class="headerlink" href="#skyshift-service-delete" title="Link to this heading">#</a></h4>
+<p>Deletes a specified service from the given namespace. This command permanently removes
+the service identified by the given name from the specified namespace.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Delete a Service from the Default Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>service<span class="w"> </span>my-service<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command deletes the <cite>my-service</cite> from the <cite>default</cite> namespace. Once deleted, the service
+will no longer be available, and any connections or resources associated with it will be terminated.</p>
+</li>
+<li><p><strong>Delete a Service from a Custom Namespace</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>delete<span class="w"> </span>service<span class="w"> </span>my-service<span class="w"> </span>--namespace<span class="o">=</span>production
+</pre></div>
+</div>
+<p>This command deletes the <cite>my-service</cite> from the <cite>production</cite> namespace. This is useful for cleaning up
+services that are no longer needed in a specific environment or namespace.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>service<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-delete-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-service-delete-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to service`s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-delete-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-service-delete-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="skyshift-service-get">
+<h4>get<a class="headerlink" href="#skyshift-service-get" title="Link to this heading">#</a></h4>
+<p>The get service command fetches the details about one specific or all services within
+a given namespace, with an optional watch functionality.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Fetch Details for All Services</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>service<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command fetches and displays details for all services within the <cite>default</cite> namespace.
+It provides an overview of each service, including its type, connected pods, port configurations,
+and other relevant metadata.</p>
+</li>
+<li><p><strong>Fetch Details for a Specific Service</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>service<span class="w"> </span>my-service<span class="w"> </span>--namespace<span class="o">=</span>default
+</pre></div>
+</div>
+<p>This command fetches and displays detailed information about the <cite>my-service</cite> within
+the <cite>default</cite> namespace. The output includes specific details such as the service type,
+connected pods, port configurations, and current status.</p>
+</li>
+<li><p><strong>Watch a Specific Service for Changes</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>get<span class="w"> </span>service<span class="w"> </span>my-service<span class="w"> </span>--namespace<span class="o">=</span>default<span class="w"> </span>--watch
+</pre></div>
+</div>
+<p>By adding the <cite>–watch</cite> flag, this command continuously monitors the <cite>my-service</cite> for
+any changes in its details. This is useful for real-time monitoring of service updates,
+allowing you to track changes as they occur.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>service<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-get-namespace">
+<span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-skyshift-service-get-namespace" title="Link to this definition">#</a></dt>
+<dd><p>Namespace corresponding to service`s location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'default'</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-get-watch">
+<span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-service-get-watch" title="Link to this definition">#</a></dt>
+<dd><p>Performs a watch.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-service-get-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-service-get-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Optional argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-status">
+<h3>status<a class="headerlink" href="#skyshift-status" title="Link to this heading">#</a></h3>
+<p>The status command displays the current status of clusters, available resources,
+and recent jobs in SkyShift.</p>
+<p>This command provides the following:
+- The total available resources of clusters in the ‘READY’ state.
+- A list of the newest 10 running jobs. Useful for monitoring and administration.</p>
+<p>Example:
+.. code-block:: bash</p>
+<blockquote>
+<div><p>skyctl status</p>
+</div></blockquote>
+<p>This command displays the status of all clusters in SkyShift, including the total
+available resources in clusters that are in the ‘READY’ state. It also lists the
+newest 10 running jobs, giving a snapshot of the system’s current activity.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>status<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="skyshift-use-context">
+<h3>use-context<a class="headerlink" href="#skyshift-use-context" title="Link to this heading">#</a></h3>
+<p>Commands for use-context</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>use-context<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-use-context-config">
+<h4>config<a class="headerlink" href="#skyshift-use-context-config" title="Link to this heading">#</a></h4>
+<p>Switches the current active context in SkyShift to the specified one. This command
+allows the user to change the active configuration context to another one as
+specified in the ‘.skyconf/config.yaml’ file. This is useful for managing different
+configurations under the same CLI session.</p>
+<dl>
+<dt>Examples:</dt><dd><ol class="arabic">
+<li><p><strong>Switch to a Different Context</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>config<span class="w"> </span>use-context<span class="w"> </span>dev-environment
+</pre></div>
+</div>
+<p>This command switches the active context to <cite>dev-environment</cite>. The new context configuration
+is loaded, and all subsequent commands will use this context until it is changed again.</p>
+</li>
+</ol>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>use-context<span class="w"> </span>config<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>NAME
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-use-context-config-arg-NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-use-context-config-arg-NAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-user">
+<h3>user<a class="headerlink" href="#skyshift-user" title="Link to this heading">#</a></h3>
+<p>Commands for user</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>user<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-user-delete">
+<h4>delete<a class="headerlink" href="#skyshift-user-delete" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>user<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>USERNAME
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-skyshift-user-delete-arg-USERNAME">
+<span class="sig-name descname"><span class="pre">USERNAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-skyshift-user-delete-arg-USERNAME" title="Link to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="skyshift-users">
+<h3>users<a class="headerlink" href="#skyshift-users" title="Link to this heading">#</a></h3>
+<p>Commands for users</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>users<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="skyshift-users-get">
+<h4>get<a class="headerlink" href="#skyshift-users-get" title="Link to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyshift<span class="w"> </span>users<span class="w"> </span>get<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Launching SkyShift</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../quickstart/quickstart.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Quickstart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift">skyshift</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-apply">apply</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-cluster">cluster</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-cluster-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-cluster-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-cluster-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-endpoints">endpoints</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-endpoints-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-endpoints-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-endpoints-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-exec">exec</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-filterpolicy">filterPolicy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-filterpolicy-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-filterpolicy-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-filterpolicy-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-invite">invite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-job">job</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-job-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-job-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-job-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-link">link</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-link-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-link-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-link-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-login">login</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-logs">logs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-namespace">namespace</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-namespace-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-namespace-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-namespace-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-port-forward">port-forward</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-register">register</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-revoke-invite">revoke_invite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-role">role</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-role-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-role-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-role-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-service">service</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-service-create">create</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-service-delete">delete</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-service-get">get</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-status">status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-use-context">use-context</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-use-context-config">config</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-user">user</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-user-delete">delete</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-users">users</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skyshift-users-get">get</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The SkyShift Authors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SkyShift Team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

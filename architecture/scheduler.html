@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Scheduler Usage, Configuration, and Extension &#8212; SkyShift</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=28af074a"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'architecture/scheduler';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SkyShift</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/setup.html">Launching SkyShift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cli_docs.html">CLI Documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Registration and Login</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../authentication/authentication.html">Authentication in SkyShift</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Slurm Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../slurm_support/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm_support/quickstart/slurm_quickstart.html">Quickstart - SkyShift with Slurm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ray Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ray/quickstart/ray_quickstart.html">Quickstart - SkyShift with Ray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ray/overview.html">Overview</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kubernetes Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes_support/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes_support/cloud.html">Provisioning Kubernetes Clusters on the Sky</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using SkyShift</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cli/clusters.html">Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/jobs.html">Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/namespaces.html">Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/filterpolicies.html">Filter Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/endpoints.html">Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/roles.html">Roles and Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/exec.html">Executing Commands Within Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/users.html">Users</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../examples/bookinfo.html">BookInfo Application Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/vllm.html">vLLM Serving Example</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/michaelzhiluo/skyshift" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/architecture/scheduler.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Scheduler Usage, Configuration, and Extension</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduler-extensions">Scheduler Extensions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="scheduler-usage-configuration-and-extension">
+<h1>Scheduler Usage, Configuration, and Extension<a class="headerlink" href="#scheduler-usage-configuration-and-extension" title="Link to this heading">#</a></h1>
+<p>The scheduler is responsible for scheduling jobs. It automatically determines the spread of jobs across clusters. This controller is
+resource-aware and can be easily customized with different scheduling plugins.</p>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<p>Each job submission manifest in SkyShift can include both preference and restriction (filters) stanzas for the scheduler to evaluate during
+cluster placement.  Both criteria can be used in a job request and is not mutually exclusive.</p>
+<p><strong>Preferences Summary</strong>
+A job submission can optionally include multiple cluster placement preferences and associated weights in the job preference stanza.  During
+job placement the scheduler checks each cluster defined in the SkyShift system to determine if the expressed preference criteria of the jobs is
+satisfied. Details of the criteria expression are describe below.  If the criteria is satisfied a preference weight is retreived from the
+stanza as a local weighted preference.  If a cluster satisfies multiple preferences, the highest weighted preference is selected as the
+final local weighted preference.  If no matching preference criteria is found for the cluster it is assigned the lowest possible
+weight (DEFAULT_MIN_WEIGHT).</p>
+<p><strong>Filters Summary</strong>
+A job submission can optionally include multiple cluster placement restrictions expressed as filters.  During
+job placement the scheduler checks each cluster defined in the SkyShift system to determine if the expressed filter criteria of the job is
+satisfied.  Details of the criteria expression are describe below.  If the criteria is satisfied the cluster is removed from the
+available cluster placement list eliminating the ability to place the job on the filtered cluster.</p>
+<p><strong>Placement Stanza</strong>
+The job submission includes an optional placement stanza as part of the job specification to enable expressions for both cluster placement
+preferences and restrictions.  Below is a JSON snippit of the placement stanza.</p>
+<blockquote>
+<div><dl>
+<dt>“spec”: {</dt><dd><blockquote>
+<div><dl>
+<dt>“placement”: {</dt><dd><dl>
+<dt>“filters”: [</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“name”: “filter-criteria-1”,
+# Sub-stanza match_labels or match_expressions
+# for filter-criteria-1 defined here</p>
+</dd>
+<dt>}, {</dt><dd><p>“name”: “filter-criteria-2”,
+# Sub-stanza match_labels or match_expressions
+# for filter-criteria-2 defined here</p>
+</dd>
+</dl>
+<p>},</p>
+</dd>
+</dl>
+<p>],
+“preferences”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“name”: “pref-criteria-1”,
+# Sub-stanza match_labels or match_expressions
+# for pref-criteria-1 defined here
+“weight”: 100</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“name”: “pref-criteria-2”,
+# Sub-stanza match_labels or match_expressions
+# for pref-criteria-2 defined here
+“weight”:
+50</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“name”: “pref-criteria-3”,
+# Sub-stanza match_labels or match_expressions
+# for pref-criteria-3 defined here
+“weight”: 25</p>
+</div></blockquote>
+<p>},</p>
+</div></blockquote>
+<p>],</p>
+</dd>
+</dl>
+<p>},</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>In the example JSON snippit above there are 2 filters and 3 preferences defined as part of the job specification.  Within the filter and
+preference sub-stanzas, each named criteria is treated as an OR operation of all criteria operations within each sub-stanza.
+Continuing with the JSON snippit above there are 2 filter expressions filter-criteria-1 and filter-criteria-2,
+if a cluster satisfies either named criteria the job would be restricted from being placed on the
+cluster.  For the preferences sub-stanza, the criterias between named preference definitions are also treated as OR operations.
+Note: within each named criteria there are two options to define an expression for evaluation, match-labels or
+match_expressions.  In the JSON snippit these definitions are are summarized as a comment and are described in more detail below.</p>
+<p><strong>Criteria Expressions</strong>
+SkyShift enables the ability to labeled clusters with key-value pairs to identify meaningfull attributes.  These labels can be used to
+enable advanced scheduling features.  For example if there are 3 clusters (cluster-1, cluster-2, cluster-3) registered in SkyShift and each
+cluster has an intended scope for running specific types of workloads such as development, staging, or production workloads, the respective
+clusters can be labeled with a scoped attributes using a key-value pair, purpose=development for cluster-1, purpose=staging for cluster-2,
+and purpose=production for cluster-3.  Cluster labeling is introduced here to provide prerequisits for enabling advanced scheduling
+features for jobs.  More details on labeling clusters is described in the Configuration section below.</p>
+<p>There are two options to define an expression for evaluation within each named criteria, the match_labels sub-stanza which can be
+used to define an explicit list of cluster labels that must be an exact match in order to meet the criteria, and the
+match-expressions sub-stanza which can be used to define a more expressive critera for cluster label matching.</p>
+<p>__Sub-stanze <a href="#id1"><span class="problematic" id="id2">match_labels__</span></a>
+The match_labels sub-stanza can be used to express an explicit list of key-value label pairs for a named criteria.  When the scheduler is
+evaluating a job placement the labels of a cluster are matched against all the labels listed within the job’s match_labels
+sub-stanza of a filter or preference.  If a cluster’s labels match all listed labels within the job’s match_labels sub-stanza the
+cluster is considered to meet the named criteria.  This evaluation is an AND operation thus if the cluster does not match all of
+the listed labels in the match_labels sub-stanza the cluster is not considered to have met the named criteria.</p>
+<p>Continuing with the previous JSON snippit example, below is an expansion of the JSON snippit for the first named criteria,
+‘filter-criteria-1’, replacing the comment section: ‘# Sub-stanza match_labels or match_expression…’ with a match_labels
+definition.</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “filter-criteria-1”,
+“match_labels”: {</p>
+<blockquote>
+<div><p>“purpose”: “dev”</p>
+</div></blockquote>
+<p>},</p>
+</dd>
+</dl>
+<p>},</p>
+</div></blockquote>
+<p>In this example, the job containing the placement filter criteria above will be scheduled to run in a cluster annotated with
+the label purpose=dev.  If there are no clusters annotated with the label the job will queue until a cluster annotated with the
+label is registered in the SkyShift system.  In otherwords, the intent is to restrict this job to only run on any one
+of the development clusters registered within SkyShift (there can be more than 1).</p>
+<p>__Sub-stanze <a href="#id3"><span class="problematic" id="id4">match_expressions_</span></a>
+The match_expressions sub-stanza is a more expressive way to define more complex definitions of label matching.  Expression
+label matching is evaluated using the expression opperator.  There are two operators supported in SkyShift, ‘In’ and ‘NotIn’.
+For the ‘In’ operator, a cluster must have the defined key label and at least one of the associated key label
+values (OR operation) for the scheduler to consider the cluster a candidate for placing the job.
+For the ‘NotIn’ operator, a cluster must not be annotated with any of the defined key-value pair combinations.  Continuing with
+the previous JSON snippit example, below is an expansion of the JSON snippit for the second named criteria,
+‘filter-criteria-2’, replacing the comment section: ‘# Sub-stanza match_labels or match_expression…’ with a match_labels
+definition.</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “filter-criteria-2”,
+“match_expressions”: {</p>
+<blockquote>
+<div><p>‘key’: ‘location’,
+‘operator’: ‘In’,
+‘values’: [‘eu’, ‘us’]</p>
+</div></blockquote>
+<p>},</p>
+</dd>
+</dl>
+<p>},</p>
+</div></blockquote>
+<p>In this example, the job containing the placement filter criteria above will be scheduled to run in a cluster annotated with
+the label location=eu or location=us.  If there are no clusters annotated with either label the job will queue until a cluster
+annotated with either label is registered in the SkyShift system.  In otherwords, the intent is to restrict this job to run only on clusters
+in the EU or in the US.</p>
+<p><strong>Putting it All Together</strong>
+The placement stanza is a optional feature that can be used to guide the SkyShift scheduler to restrict or prefer the
+placement of a job.  Details on configuring restrictions (filters) and preferences within the placement stanza are described
+above.  Below is a JSON example of a job definition, named ‘my-job’ with placement restrictions and preferences.</p>
+<dl>
+<dt>{</dt><dd><p>“kind”: “Job”,
+“metadata”: {</p>
+<blockquote>
+<div><p>“name”: “my-job”</p>
+</div></blockquote>
+<p>},
+“spec”: {</p>
+<blockquote>
+<div><p>“replicas”: “1”,
+“image”: “ubuntu:latest”,
+“resources”: {</p>
+<blockquote>
+<div><p>“cpus”: “1”,
+“memory”: “128”</p>
+</div></blockquote>
+<p>},
+“run”: “echo hello_sky; sleep 300”,
+“placement”: {</p>
+<blockquote>
+<div><dl>
+<dt>“filters”: [{</dt><dd><p>“name”:
+“filter-1”,
+“match_labels”: {</p>
+<blockquote>
+<div><p>“purpose”: “dev”</p>
+</div></blockquote>
+<p>},
+“match_expressions”: [{</p>
+<blockquote>
+<div><p>“key”: “location”,
+“operator”: “NotIn”,
+“values”: [“eu”]</p>
+</div></blockquote>
+<p>}]</p>
+</dd>
+<dt>}, {</dt><dd><p>“name”:
+“filter-2”,
+“match_labels”: {</p>
+<blockquote>
+<div><p>“purpose”: “staging”</p>
+</div></blockquote>
+<p>},
+“match_expressions”: [{</p>
+<blockquote>
+<div><p>“key”: “location”,
+“operator”: “NotIn”,
+“values”: [“eu”, “ap”]</p>
+</div></blockquote>
+<p>}]</p>
+</dd>
+</dl>
+<p>}],
+“preferences”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “pref-1”,
+“match_labels”: {</p>
+<blockquote>
+<div><p>“sky-cluster-name”: “mycluster-dev-1”</p>
+</div></blockquote>
+<p>},
+“weight”: 100</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“name”:
+“pref-2”,
+“match_labels”: {</p>
+<blockquote>
+<div><p>“purpose”: “dev”</p>
+</div></blockquote>
+<p>},
+“match_expressions”: [{</p>
+<blockquote>
+<div><p>“key”: “location”,
+“operator”: “In”,
+“values”: [“na”]</p>
+</div></blockquote>
+<p>}],
+“weight”:
+50</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“name”: “pref-3”,
+“match_labels”: {</p>
+<blockquote>
+<div><p>“purpose”: “dev”</p>
+</div></blockquote>
+<p>},
+“weight”: 25</p>
+</div></blockquote>
+<p>},</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+<p>In the JSON example above, when the SkyShift scheduler considers placing ‘my-job’, it will include any register clusters
+as potential placement candidates that are labeled as
+development clusters that are not located in the EU.  The scheduler will also include any register clusters that are labeled as
+staging clusters that are not located in the EU or AP.  With this superset of restricted clusters the scheduler will then apply a weighted
+order of cluster candidates for placement consideration.  The order is defined in the preferences definition and ordered based on defined
+weights within each preference.</p>
+<p>The scheduling order will first prefer to place the job on a cluster named mycluster-dev-1.  If the job
+can not be placed on the named cluster (for example insufficient memory availability) the scheduler will attempt to place the job on a
+development cluster that is located in NA.  A third scheduling attempt if the job can not be placed in any clusters that meet the first two
+preferences is to place the job on any development cluster within the restricted superset of clusters (defined by the filters) regardless
+of the location, e.g. a cluster in the US.  Finally if the job can not be placed on any of the prefered clusters, the scheduler will
+attempt to place the job within any of the restricted superset of clusters that do not have a preference order. For example,
+the job could be placed on a cluster that is labeled as a staging cluster in the US.</p>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">#</a></h2>
+<p><strong>Administration</strong>
+In order to utilize the advanced scheduling policies, clusters registered to SkyShift need to be annotated with appropriate
+labels.  This process is typically done by a SkyShift administrator.</p>
+<p><strong>Annotating Cluster Labels</strong>
+If a cluster is already registered to SkyShift without clusters the administor will first need to remove the registration from
+SkyShift.  This can be done using the SkyShift CLI delete subcommand. For example, below is a sample CLI command to remove
+a registered Kubernetes cluster named ‘cluster-1’ from SkyShift:</p>
+<blockquote>
+<div><p>sky delete cluster cluster-1</p>
+</div></blockquote>
+<p>Once the cluster is deleted, it can be re-registered with the SkyShift CLI create subcommand.  For example, to re-registered
+the Kubernetes cluster, cluster-1, with two labels, sky-cluster-name=mycluster-dev-1 and purpose=dev the following CLI
+command can be issued:</p>
+<blockquote>
+<div><p>sky create cluster cluster-1 –manager k8s –labels sky-cluster-name mycluster-dev-1 –labels purpose dev</p>
+</div></blockquote>
+<p>Further details of the SkyShift CLI can get foudn in the SkyShift CLI documentation.</p>
+</section>
+<section id="scheduler-extensions">
+<h2>Scheduler Extensions<a class="headerlink" href="#scheduler-extensions" title="Link to this heading">#</a></h2>
+<p>This controller does not schedule tasks/pods, but instead schedules at a higher level of abstraction - jobs (groups of
+tasks/pods). This enables the scheduler to satisfy gang/coscheduling, colocation, and governance requirements.  The
+SkyShift scheduler logic can be modified via the scheduler plugin interface.</p>
+<p><strong>Creating a Custom Scheduler Plugin</strong>
+In order to customize the SkyShift scheduler a new plugin can be defined that will need to implement 3
+methods defined by the base plugin interface (base_plugin.py).  Below is a description of the 3 methods.</p>
+<blockquote>
+<div><dl>
+<dt>def filter()</dt><dd><p>“””Filters the clusters based on the job’s defined requirements.”””</p>
+</dd>
+<dt>def score()</dt><dd><p>“””Scores the clusters based on the job’s scoring requirements.</p>
+<p>This plugin returns a score between 0 and 100. The score is used to rank
+clusters. A score of 0 means the cluster is the least preferred node, and a
+score of 100 means the node is the most preferred cluster.
+“””</p>
+</dd>
+<dt>def spread()</dt><dd><p>“””Computes the spread of a job’s tasks across clusters.</p>
+<p>Returns the allocated # of tasks that can be scheduled on each cluster.
+“””</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Registering a Custom Scheduler Plugin</strong></p>
+<p>Once a custom scheduler plugin is defined, it must be loaded by the SkyShift Scheduler.  This is done
+by simply adding the custom plugin into the SkyShift Scheduler Controller (scheduler_controller.py).  Once added, the
+SkyShift Scheduler Controller will load the new custom plugin at runtime.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduler-extensions">Scheduler Extensions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The SkyShift Authors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SkyShift Team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BookInfo Application Example &#8212; SkyShift</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=28af074a"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/bookinfo';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="vLLM Serving Example" href="vllm.html" />
+    <link rel="prev" title="Users" href="../cli/users.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SkyShift</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/networking.html">Networking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/setup.html">Launching SkyShift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/cli_docs.html">CLI Documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Registration and Login</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../authentication/authentication.html">Authentication in SkyShift</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Slurm Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../slurm_support/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm_support/quickstart/slurm_quickstart.html">Quickstart - SkyShift with Slurm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ray Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ray/quickstart/ray_quickstart.html">Quickstart - SkyShift with Ray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ray/overview.html">Overview</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kubernetes Support</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes_support/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes_support/cloud.html">Provisioning Kubernetes Clusters on the Sky</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using SkyShift</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cli/clusters.html">Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/jobs.html">Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/namespaces.html">Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/filterpolicies.html">Filter Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/endpoints.html">Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/roles.html">Roles and Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/exec.html">Executing Commands Within Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/users.html">Users</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">BookInfo Application Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vllm.html">vLLM Serving Example</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/michaelzhiluo/skyshift" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/examples/bookinfo.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>BookInfo Application Example</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="bookinfo-application-example">
+<span id="examples"></span><h1>BookInfo Application Example<a class="headerlink" href="#bookinfo-application-example" title="Link to this heading">#</a></h1>
+<p>This example demonstrates how an application like <a class="reference external" href="https://istio.io/latest/docs/examples/bookinfo/">Istio BookInfo</a> can be deployed using Skyshift.
+This test uses two k8s clusters:</p>
+<ul class="simple">
+<li><p>Cluster1 : A Product-Page microservice (application frontend) and details microservice run on the first cluster, which is used as frontend.</p></li>
+<li><p>Cluster2 : A Reviews-V2 (display rating with black stars) and Rating microservices run on the second cluster, used as backend.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Start Skyshift using the commands listed in <a class="reference internal" href="../getting_started/setup.html#setup"><span class="std std-ref">Setup Guide</span></a>.</p></li>
+<li><p>Add the first cluster to Skyshift.</p></li>
+</ol>
+<p>Optionally, Create and configure KIND cluster.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kind<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>--name<span class="o">=</span>cluster1
+</pre></div>
+</div>
+<p>Next, enable MetalLB to provision loadbalancer for creating service with external IP, since this will be a frontend cluster.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/metallb/metallb/v0.13.10/config/manifests/metallb-native.yaml
+</pre></div>
+</div>
+<p>Check the status of the MetalLB pods using the following command, and wait until they are in running state.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>metallb-system
+</pre></div>
+</div>
+<p>Once the pods are in running state, apply the following configuration.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sleep<span class="w"> </span><span class="m">5</span>
+kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">apiVersion: metallb.io/v1beta1</span>
+<span class="s">kind: IPAddressPool</span>
+<span class="s">metadata:</span>
+<span class="s">    name: kind-pool</span>
+<span class="s">    namespace: metallb-system</span>
+<span class="s"> spec:</span>
+<span class="s">    addresses:</span>
+<span class="s">        - 172.18.255.1-172.18.255.250  # Choose an IP range that doesn&#39;t conflict with your local network</span>
+<span class="s">---</span>
+<span class="s">apiVersion: metallb.io/v1beta1</span>
+<span class="s">kind: L2Advertisement</span>
+<span class="s">metadata:</span>
+<span class="s">    name: kind-advertisement</span>
+<span class="s">    namespace: metallb-system</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>Finally, add this cluster to Skyshift with label as frontend.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>--manager<span class="w"> </span>k8<span class="w"> </span>kind-cluster1<span class="w"> </span>--labels<span class="w"> </span><span class="nb">type</span><span class="w"> </span>frontend
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Now, add the second cluster to Skyshift with label as backend.</p></li>
+</ol>
+<p>Optionally, Create KIND cluster.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kind<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>--name<span class="o">=</span>cluster2
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>--manager<span class="w"> </span>k8<span class="w"> </span>kind-cluster2<span class="w"> </span>--labels<span class="w"> </span><span class="nb">type</span><span class="w"> </span>backend
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Submit the jobs productpage and details microservice to Skyshift.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SKYSHIFT</span><span class="o">=</span>&lt;Path<span class="w"> </span>to<span class="w"> </span>cloned<span class="w"> </span>Skyshift<span class="w"> </span>directory&gt;
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SKYSHIFT</span>/examples/bookinfo-demo/productpage.yaml
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SKYSHIFT</span>/examples/bookinfo-demo/details.yaml
+</pre></div>
+</div>
+<p>Verify if the jobs  are in running state and scheduled in kind-cluster1.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>skyctl<span class="w"> </span>get<span class="w"> </span><span class="nb">jobs</span>
+⠙<span class="w"> </span>Fetching<span class="w"> </span><span class="nb">jobs</span>
+NAME<span class="w">         </span>CLUSTER<span class="w">        </span>REPLICAS<span class="w">    </span>RESOURCES<span class="w">          </span>NAMESPACE<span class="w">    </span>STATUS<span class="w">    </span>AGE
+details-v1<span class="w">   </span>kind-cluster1<span class="w">  </span><span class="m">1</span>/1<span class="w">         </span>cpus:<span class="w"> </span><span class="m">7</span>.0<span class="w">          </span>default<span class="w">      </span>RUNNING<span class="w">   </span>12s
+<span class="w">                                        </span>memory:<span class="w"> </span><span class="m">128</span>.00<span class="w"> </span>MB
+productpage<span class="w">  </span>kind-cluster1<span class="w">  </span><span class="m">1</span>/1<span class="w">         </span>cpus:<span class="w"> </span><span class="m">7</span>.0<span class="w">          </span>default<span class="w">      </span>RUNNING<span class="w">   </span>18s
+<span class="w">                                        </span>memory:<span class="w"> </span><span class="m">128</span>.00<span class="w"> </span>MB
+✔<span class="w"> </span>Fetching<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>completed<span class="w"> </span>successfully.
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Create a service for the jobs.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SKYSHIFT</span>/examples/bookinfo-demo/productpage_service.yaml
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SKYSHIFT</span>/examples/bookinfo-demo/details_service.yaml
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Deploy reviews and ratings microservice in cluster2.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SKYSHIFT</span>/examples/bookinfo-demo/ratings.yaml
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SKYSHIFT</span>/examples/bookinfo-demo/reviews.yaml
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ideally, now the jobs must be running in the clusters similar to below output,
+productpage, and details-v1 are scheduled in kind-cluster1, while ratings-v1, and reviews-v2 are scheduled in kind-cluster2.</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>skyctl<span class="w"> </span>get<span class="w"> </span><span class="nb">jobs</span>
+⠙<span class="w"> </span>Fetching<span class="w"> </span><span class="nb">jobs</span>
+NAME<span class="w">         </span>CLUSTER<span class="w">        </span>REPLICAS<span class="w">    </span>RESOURCES<span class="w">          </span>NAMESPACE<span class="w">    </span>STATUS<span class="w">    </span>AGE
+details-v1<span class="w">   </span>kind-cluster1<span class="w">  </span><span class="m">1</span>/1<span class="w">         </span>cpus:<span class="w"> </span><span class="m">7</span>.0<span class="w">          </span>default<span class="w">      </span>RUNNING<span class="w">   </span>14m
+<span class="w">                                        </span>memory:<span class="w"> </span><span class="m">128</span>.00<span class="w"> </span>MB
+productpage<span class="w">  </span>kind-cluster1<span class="w">  </span><span class="m">1</span>/1<span class="w">         </span>cpus:<span class="w"> </span><span class="m">7</span>.0<span class="w">          </span>default<span class="w">      </span>RUNNING<span class="w">   </span>15m
+<span class="w">                                        </span>memory:<span class="w"> </span><span class="m">128</span>.00<span class="w"> </span>MB
+ratings-v1<span class="w">   </span>kind-cluster2<span class="w">  </span><span class="m">1</span>/1<span class="w">         </span>cpus:<span class="w"> </span><span class="m">7</span>.0<span class="w">          </span>default<span class="w">      </span>RUNNING<span class="w">   </span>47s
+<span class="w">                                        </span>memory:<span class="w"> </span><span class="m">128</span>.00<span class="w"> </span>MB
+reviews-v2<span class="w">   </span>kind-cluster2<span class="w">  </span><span class="m">1</span>/1<span class="w">         </span>cpus:<span class="w"> </span><span class="m">7</span>.0<span class="w">          </span>default<span class="w">      </span>RUNNING<span class="w">   </span>15s
+<span class="w">                                            </span>memory:<span class="w"> </span><span class="m">128</span>.00<span class="w"> </span>MB
+✔<span class="w"> </span>Fetching<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>completed<span class="w"> </span>successfully.
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Create a link between the two clusters.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>create<span class="w"> </span>link<span class="w"> </span>-s<span class="w"> </span>kind-cluster1<span class="w"> </span>-t<span class="w"> </span>kind-cluster2<span class="w"> </span>clink
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Now, we create reviews service in cluster1, so that it is accessible to productpage.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SKYSHIFT</span>/examples/bookinfo-demo/ratings_service.yaml
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>skyctl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SKYSHIFT</span>/examples/bookinfo-demo/reviews_service.yaml
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At this point it uses <a class="reference external" href="https://clusterlink.net">clusterlink</a> to import the reviews service from cluster2 .</p>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Now, we can try to access the productpage frontend application.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">FRONTEND_IP</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>productpage<span class="w"> </span>--context<span class="w"> </span>kind-cluster1<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.loadBalancer.ingress[0].ip}&#39;</span><span class="sb">`</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Open <a class="reference external" href="http://$FRONTEND_IP/productpage">http://$FRONTEND_IP/productpage</a> in browser, and you should be able to view the rating/reviews of the book as shown below.</p>
+</div>
+<img alt="SkyShift Architecture Diagram" class="no-scaled-link only-dark align-center" src="../_images/bookinfo.png" style="width: 100%;" />
+<ol class="arabic" start="10">
+<li><p>Finally, Cleanup.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./cleanup.sh
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../cli/users.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Users</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="vllm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">vLLM Serving Example</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The SkyShift Authors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SkyShift Team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
